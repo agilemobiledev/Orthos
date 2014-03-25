@@ -1,0 +1,23 @@
+<div class="col-md-4">
+</div>
+<div class="col-md-4">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th ng-click="orderProp = 'street'; reverse=!reverse">Street
+            </th>
+            <th ng-click="orderProp = 'housenumber'; reverse=!reverse">House number</th>
+            <th ng-click="orderProp = 'city'; reverse=!reverse">City</th>
+
+        </tr>
+        </thead>
+        <tr ng-repeat="address in addresses | filter:query | orderBy:orderProp:reverse">
+            <td>{{address.street}}</td>
+            <td>{{address.housenumber}}</td>
+            <td>{{address.city}}</td>
+            <td><a href="{{address._links.self.href.replace('http://localhost:8080/', '#/')}}">Details</a> </td>
+        </tr>
+    </table>
+</div>
+<div class="col-md-4">
+</div>
